@@ -1,0 +1,74 @@
+echo "----------------------------------"
+echo "BUILDING PROJECT"
+echo "BUILDER BY KUSHAL"
+echo ""
+echo "Builder Verrsion 0.4"
+echo "----------------------------------"
+
+antFile=$1
+buildSource=$2
+mainClass=$3
+targetJarName=$4
+basePackage=$5
+commandName=$6
+groovyHome=$7
+
+echo "antFile = $antFile"
+echo "buildSource = $buildSource"
+echo "mainClass = $mainClass"
+echo "targetJarName = $targetJarName"
+echo "basePackage = $basePackage"
+echo "commandName = $commandName"
+echo "groovyHome = $groovyHome"
+echo ""
+pd=`pwd`
+echo "Path Set To : $pd"
+
+echo ""
+echo "----[Builder] Doing ANT Build"
+ant -f $antFile
+
+echo ""
+echo "----[Builder] COPYING SOURCES"
+cp -rfv $buildSource .
+cp -rfv buildUtils/GroovyJarPackager.groovy .
+
+echo ""
+echo "----[Builder] BUILDING THE BUILDER SCRIPT"
+groovyc GroovyJarPackager.groovy
+echo "Builder Script (GroovyJarPackager) Compiled"
+ls *.class
+echo ""
+echo "----[Builder] CREATING JAR"
+jar cfve temp-kbuild.jar $mainClass $basePackage
+
+chmod 777 temp-kbuild.jar
+
+groovy GroovyJarPackager -s temp-kbuild.jar -d $targetJarName -m $mainClass -g $groovyHome
+
+echo "----[Builder] JAR Created"
+
+echo ""
+echo "----[Builder] BUILDING LAUNCHER"
+echo "java -jar /sbin/$targetJarName \$*" > $commandName
+echo "----[Builder] Build OK"
+
+chmod 777 $commandName
+
+echo ""
+echo "----[Builder] CLEANING UP"
+rm -rfv $basePackage
+rm -rfv *.class
+rm -rfv GroovyJarPackager.groovy
+rm -rfv temp-kbuild.jar
+
+echo ""
+echo "----[Builder] INSTALLING COMMAND"
+echo "--> SUPER USER PRIVELEDGES REQUIRED TO INSTALL COMMAND" 
+sudo cp -fp $commandName /sbin
+sudo cp -fp $targetJarName /sbin
+echo "----[Builder] Installation Complete. Command installed -> 'jsbuild'"
+echo "----[Builder] Saving Files"
+mv -vf $commandName target/
+mv -vf $targetJarName target/ 
+

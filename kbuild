@@ -1,0 +1,19 @@
+#Builder by Kushal Likhi
+
+##############CONFIGURATIONS#################
+
+
+antFile="jsbuild.xml"
+buildSource="target/production/Jsbuild/org/"
+mainClass="org.devunited.jsbuild.JsBuild"
+targetJarName="jsBuild.jar"
+basePackage="org"
+commandName="jsbuild"
+groovyHome="/opt/groovy"
+
+
+#############################################
+
+
+# Calling here
+./buildUtils/buildProject $antFile $buildSource $mainClass $targetJarName $basePackage $commandName $groovyHome

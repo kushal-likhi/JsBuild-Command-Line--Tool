@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jsbuild" default="all">
+  
+  
+  <property file="jsbuild.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="128m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/*.lib/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.ear"/>
+    <include name="*.zip"/>
+    <include name="*.swc"/>
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <include name="**/?*.properties"/>
+    <include name="**/?*.xml"/>
+    <include name="**/?*.gif"/>
+    <include name="**/?*.png"/>
+    <include name="**/?*.jpeg"/>
+    <include name="**/?*.jpg"/>
+    <include name="**/?*.html"/>
+    <include name="**/?*.dtd"/>
+    <include name="**/?*.tld"/>
+    <include name="**/?*.ftl"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.6" value="${jdk.home.1.6}/bin"/>
+  <path id="jdk.classpath.1.6">
+    <fileset dir="${jdk.home.1.6}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/alt-rt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.6}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.6}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.6"/>
+  
+  
+  <!-- Global Libraries -->
+  
+  <path id="library.groovy-1.7.5.classpath">
+    <pathelement location="/opt/groovy/lib/ant-1.8.1.jar"/>
+    <pathelement location="/opt/groovy/lib/ant-antlr-1.8.1.jar"/>
+    <pathelement location="/opt/groovy/lib/ant-junit-1.8.1.jar"/>
+    <pathelement location="/opt/groovy/lib/ant-launcher-1.8.1.jar"/>
+    <pathelement location="/opt/groovy/lib/ant-nodeps-1.8.1.jar"/>
+    <pathelement location="/opt/groovy/lib/antlr-2.7.7.jar"/>
+    <pathelement location="/opt/groovy/lib/asm-3.2.jar"/>
+    <pathelement location="/opt/groovy/lib/asm-analysis-3.2.jar"/>
+    <pathelement location="/opt/groovy/lib/asm-commons-3.2.jar"/>
+    <pathelement location="/opt/groovy/lib/asm-tree-3.2.jar"/>
+    <pathelement location="/opt/groovy/lib/asm-util-3.2.jar"/>
+    <pathelement location="/opt/groovy/lib/bsf-2.4.0.jar"/>
+    <pathelement location="/opt/groovy/lib/commons-cli-1.2.jar"/>
+    <pathelement location="/opt/groovy/lib/commons-logging-1.1.1.jar"/>
+    <pathelement location="/opt/groovy/lib/groovy-1.7.5.jar"/>
+    <pathelement location="/opt/groovy/lib/ivy-2.2.0-rc1.jar"/>
+    <pathelement location="/opt/groovy/lib/jansi-1.2.1.jar"/>
+    <pathelement location="/opt/groovy/lib/jline-0.9.94.jar"/>
+    <pathelement location="/opt/groovy/lib/jsp-api-2.0.jar"/>
+    <pathelement location="/opt/groovy/lib/junit-4.8.1.jar"/>
+    <pathelement location="/opt/groovy/lib/servlet-api-2.4.jar"/>
+    <pathelement location="/opt/groovy/lib/xstream-1.3.1.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm.jar"/>
+    <pathelement location="${javac2.home}/asm-commons.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+    <property name="grooovyc.task.sdk" value="library.groovy-1.7.5.classpath"/>
+    <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpathref="${grooovyc.task.sdk}"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module Jsbuild -->
+  
+  <dirname property="module.jsbuild.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.jsbuild" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.jsbuild" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.jsbuild" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.jsbuild" value="${compiler.args}"/>
+  
+  <property name="jsbuild.output.dir" value="${module.jsbuild.basedir}/target/production/Jsbuild"/>
+  <property name="jsbuild.testoutput.dir" value="${module.jsbuild.basedir}/target/test/Jsbuild"/>
+  
+  <path id="jsbuild.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="jsbuild.module.production.classpath">
+    <path refid="${module.jdk.classpath.jsbuild}"/>
+    <path refid="library.groovy-1.7.5.classpath"/>
+  </path>
+  
+  <path id="jsbuild.runtime.production.module.classpath">
+    <pathelement location="${jsbuild.output.dir}"/>
+    <path refid="library.groovy-1.7.5.classpath"/>
+  </path>
+  
+  <path id="jsbuild.module.classpath">
+    <path refid="${module.jdk.classpath.jsbuild}"/>
+    <pathelement location="${jsbuild.output.dir}"/>
+    <path refid="library.groovy-1.7.5.classpath"/>
+  </path>
+  
+  <path id="jsbuild.runtime.module.classpath">
+    <pathelement location="${jsbuild.testoutput.dir}"/>
+    <pathelement location="${jsbuild.output.dir}"/>
+    <path refid="library.groovy-1.7.5.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.jsbuild">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.jsbuild">
+    <patternset refid="excluded.from.module.jsbuild"/>
+  </patternset>
+  
+  <path id="jsbuild.module.sourcepath">
+    <dirset dir="${module.jsbuild.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.jsbuild" depends="compile.module.jsbuild.production,compile.module.jsbuild.tests" description="Compile module Jsbuild"/>
+  
+  <target name="compile.module.jsbuild.production" depends="register.custom.compilers" description="Compile module Jsbuild; production classes">
+    <mkdir dir="${jsbuild.output.dir}"/>
+    <groovyc destdir="${jsbuild.output.dir}" fork="yes">
+      <src refid="jsbuild.module.sourcepath"/>
+      <classpath refid="jsbuild.module.production.classpath"/>
+      <patternset refid="excluded.from.compilation.jsbuild"/>
+      <javac debug="${compiler.debug}">
+        <compilerarg line="${compiler.args.jsbuild}"/>
+      </javac>
+    </groovyc>
+    <instrumentIdeaExtensions destdir="${jsbuild.output.dir}">
+      <compilerarg line="${compiler.args.jsbuild}"/>
+      <bootclasspath refid="jsbuild.module.bootclasspath"/>
+      <classpath refid="jsbuild.module.production.classpath"/>
+      <src refid="jsbuild.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.jsbuild"/>
+    </instrumentIdeaExtensions>
+    
+    <copy todir="${jsbuild.output.dir}">
+      <fileset dir="${module.jsbuild.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.jsbuild.tests" depends="register.custom.compilers,compile.module.jsbuild.production" description="compile module Jsbuild; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.jsbuild" description="cleanup module">
+    <delete dir="${jsbuild.output.dir}"/>
+    <delete dir="${jsbuild.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.jsbuild" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.jsbuild" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>
