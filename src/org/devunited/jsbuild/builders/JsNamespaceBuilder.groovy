@@ -2,7 +2,6 @@ package org.devunited.jsbuild.builders
 
 import org.devunited.jsbuild.enricher.CommandLineUserInterfaceReady
 import org.devunited.jsbuild.messages.MessageTemplate
-import org.devunited.jsbuild.JsBuild
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,6 +19,8 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
     String indent = ""
     String closingIndent = ""
 
+    def parentContext
+
     def TYPE_PROPERTY = true
     def TYPE_COMMENT = false
 
@@ -28,9 +29,10 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
         this.recursionSibling = recursionSibling
     }
 
-    JsNamespaceBuilder(Map options) {
+    JsNamespaceBuilder(Map options, parentContext) {
         this.recursionLevel = options.recursionLevel
         this.recursionSibling = options.recursionSibling
+        this.parentContext = parentContext
     }
 
     public String build(File baseDir) {
@@ -44,7 +46,7 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
         }
 
         showToUserFromTemplate MessageTemplate.NAMESPACE_BUILDER_ENTRY_MESSAGE, [
-                packageName: JsPackageBuilder.determinePackage(namespace),
+                packageName: JsPackageBuilder.determinePackage(namespace, parentContext),
                 recursionLevel: recursionLevel,
                 recursionSibling: recursionSibling
         ]
@@ -58,21 +60,28 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
                             [
                                     recursionLevel: recursionLevel + 1,
                                     recursionSibling: recursionSibling
-                            ]
+                            ],
+                            parentContext
                     ).build(file)
                 }, \n"""
                 recursionSibling++
             } else {
                 if (!file.getName().endsWith(".comment")) {
-                    JsBuild.totalProperties++
-                    JsFileParser jsFileParser = new JsFileParser(file)
+                    parentContext.totalProperties++
+                    JsFileParser jsFileParser = new JsFileParser(file, parentContext)
                     contentBuffer += "${indentEachLine jsFileParser.comments}"
                     contentBuffer += (indentEachLine("${file.getName() - ".js"}: ${jsFileParser.property},"))
                 }
             }
         }
 
-        contentBuffer += "${indent}init_${namespace.getCanonicalPath().split(File.separatorChar.toString()).last()}_jsBuild_generated: function(){} \n"
+        String constructor = "init_${namespace.getCanonicalPath().split(File.separatorChar.toString()).last()}_jsBuild_generated"
+        parentContext.constructors.add(JsPackageBuilder.determinePackage(namespace, parentContext) + "." + constructor)
+        contentBuffer += indentEachLine("${constructor}: function(){}${(recursionLevel == 1) ? ',' : ''} \n")
+
+        if (recursionLevel == 1) {
+            contentBuffer += indentEachLine("MasterConstructor_jsBuild_generated: new function(){${indentEachLine(new MasterConstructorBuilder(parentContext).build())}} \n")
+        }
 
         return ('{ \n' + contentBuffer + "${closingIndent}}")
     }

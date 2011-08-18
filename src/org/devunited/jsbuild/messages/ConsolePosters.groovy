@@ -35,16 +35,16 @@ Licence: ${BuildInfo.licence}
 ***********************************************
 """
 
-    public static summaryPoster = {"""
+    public static summaryPoster = {parentContext->"""
 *******************SUMMARY*********************
-Total Files Scanned: ${JsBuild.filesScanned}
-Total Comment Files Found: ${JsBuild.commentsFound}
-Total Properties: ${JsBuild.totalProperties}
-Total Packages: ${JsBuild.totalPackages}
-Total Lines Scanned: ${JsBuild.totalLoc}
-Total Blank Lines: ${JsBuild.totalBlankLines}
-Total Lines In Built File: ${JsBuild.totalLinesInBuild}
-Target File: ${JsBuild.targetFilePath}
+Total Files Scanned: ${parentContext.filesScanned}
+Total Comment Files Found: ${parentContext.commentsFound}
+Total Properties: ${parentContext.totalProperties}
+Total Packages: ${parentContext.totalPackages}
+Total Lines Scanned: ${parentContext.totalLoc}
+Total Blank Lines: ${parentContext.totalBlankLines}
+Total Lines In Built File: ${parentContext.totalLinesInBuild}
+Target File: ${parentContext.targetFilePath}
 ***********************************************
 """}
 

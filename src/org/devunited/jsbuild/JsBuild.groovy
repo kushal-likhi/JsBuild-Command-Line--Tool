@@ -6,6 +6,7 @@ import org.devunited.jsbuild.messages.MessageTemplate
 import org.devunited.jsbuild.enricher.CommandLineUserInterfaceReady
 import org.devunited.jsbuild.builders.JsCommentBuilder
 import org.devunited.jsbuild.builders.JsPackageBuilder
+import org.devunited.jsbuild.builders.JsAnnotationEngine
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,30 +17,43 @@ import org.devunited.jsbuild.builders.JsPackageBuilder
 
 class JsBuild implements CommandLineUserInterfaceReady {
 
-    public static String baseDir = ""
+    public String baseDir = ""
 
-    public static String targetFilePath = ""
+    public String targetFilePath = ""
 
-    public static boolean isFileCommentsEnabled = true
+    public boolean isFileCommentsEnabled = true
 
-    public static Integer filesScanned = 0
+    public Integer filesScanned = 0
 
-    public static Integer commentsFound = 0
+    public Integer commentsFound = 0
 
-    public static Integer totalProperties = 0
+    public Integer totalProperties = 0
 
-    public static Integer totalPackages = 0
+    public Integer totalPackages = 0
 
-    public static Integer totalLoc = 0
+    public Integer totalLoc = 0
 
-    public static Integer totalBlankLines = 0
+    public Integer totalBlankLines = 0
 
-    public static Integer totalLinesInBuild = 0
+    public Integer totalLinesInBuild = 0
 
+    public Map exportedProperties = [:]
 
+    public Map aliasedProperties = [:]
+
+    public List errors = []
+
+    public List<String> constructors = []
 
 
     public static void main(String[] args) {
+
+        new JsBuild().start(args)
+
+    }
+
+
+    public void start(String[] args) {
 
 
         OptionAccessor optionAccessor = parseCliSwitches(args)
@@ -95,13 +109,16 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
 
         builderState "Fetching Comments"
-        targetFileContents += new JsCommentBuilder(sourceDir).comments
+        targetFileContents += new JsCommentBuilder(sourceDir, this).comments
         putLineBreakWithHeight 1
 
 
 
         builderState "Starting Recursive Build"
-        targetFileContents += new JsPackageBuilder([recursionLevel: 1, recursionSibling: 1]).build(sourceDir)
+        targetFileContents += new JsPackageBuilder([recursionLevel: 1, recursionSibling: 1], this).build(sourceDir)
+        JsAnnotationEngine annotationEngine = new JsAnnotationEngine(targetFileContents)
+        annotationEngine.processExports(exportedProperties)
+        targetFileContents = annotationEngine.contents
         showToUser "Recursive Build Complete"
         putLineBreakWithHeight 1
 
@@ -122,7 +139,15 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
 
 
-        showToUser ConsolePosters.summaryPoster()
+        showToUser ConsolePosters.summaryPoster(this)
+
+
+        if (!errors.isEmpty()) {
+            showToUser "NOTE: There Were Few Errors/Warnings During Build"
+            putLineBreakWithHeight 1
+            errors.each {showToUser it}
+            putLineBreakWithHeight 2
+        }
 
     }
 

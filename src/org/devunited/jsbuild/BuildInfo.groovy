@@ -8,7 +8,7 @@ package org.devunited.jsbuild
  */
 public static abstract interface BuildInfo {
 
-    public static final String version = "0.9"
+    public static final String version = "1.1"
 
     public static final String projectName = "JsBuild - Javascript Builder"
 

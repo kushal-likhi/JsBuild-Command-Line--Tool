@@ -29,4 +29,7 @@ public static abstract interface MessageTemplate {
     public static final FILE_PARSER_ENTRY_MESSAGE = "[File Parser] Parsing File : ###targetFile###"
 
 
+    public static final ANNOTATION_PROCESSOR_ENTRY_MESSAGE = "[Annotation Processor] Processing Annotation : ###type###, Arguments: ###args###"
+
+
 }

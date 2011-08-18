@@ -17,9 +17,12 @@ class JsFileParser implements CommandLineUserInterfaceReady {
     String comments
     String property
 
+    def parentContext
 
-    JsFileParser(File target) {
+
+    JsFileParser(File target, parentContext) {
         targetFile = target
+        this.parentContext = parentContext
         parse()
     }
 
@@ -39,7 +42,7 @@ class JsFileParser implements CommandLineUserInterfaceReady {
     }
 
     public String getComments() {
-        if (JsBuild.isFileCommentsEnabled) {
+        if (parentContext.isFileCommentsEnabled) {
             return comments
         } else {
             return ""
@@ -98,15 +101,17 @@ class JsFileParser implements CommandLineUserInterfaceReady {
                     if (line.trim().endsWith("*/")) {
                         commentBlockLock = false
                     }
+                } else if (!propertyLock && !commentBlockLock && line.trim().startsWith("@")) {
+                    new JsAnnotationProcessor(line, targetFile, parentContext)
                 } else {
                     channels.propertyChannel += ((isFirst ? '' : '\n') + line)
                     propertyLock = true
                 }
                 isFirst = false
             } else {
-                JsBuild.totalBlankLines++
+                parentContext.totalBlankLines++
             }
-            JsBuild.totalLoc++
+            parentContext.totalLoc++
         }
 
         channels
