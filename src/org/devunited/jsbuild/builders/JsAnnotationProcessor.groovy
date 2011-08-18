@@ -14,19 +14,21 @@ class JsAnnotationProcessor implements CommandLineUserInterfaceReady {
 
     Map annotation
 
+    def mainContext
     def parentContext
 
     String propertyAddress
 
-    public JsAnnotationProcessor(String annotation, File file, parentContext) {
+    public JsAnnotationProcessor(String annotation, File file, mainContext, parentContext) {
         this.annotation = decryptAnnotationString(annotation)
+        this.mainContext = mainContext
         this.parentContext = parentContext
         propertyAddress = determineAddress(file.getCanonicalPath())
         process()
     }
 
     def determineAddress = {path ->
-        String basePath = new File((parentContext.baseDir + File.separatorChar + "..")).getCanonicalPath() + File.separatorChar
+        String basePath = new File((mainContext.baseDir + File.separatorChar + "..")).getCanonicalPath() + File.separatorChar
         path = (path - basePath)
         path = (path - ".js")
         return path.trim().replace('/', '.').replace(File.separator, '.')
@@ -48,20 +50,37 @@ class JsAnnotationProcessor implements CommandLineUserInterfaceReady {
 
         switch (annotation.type) {
             case "export":
-                parentContext.exportedProperties.put((!annotation.args.isEmpty() ? annotation.args.first().trim() : propertyAddress.tokenize('.').last()), propertyAddress)
+                mainContext.exportedProperties.put((!annotation.args.isEmpty() ? annotation.args.first().trim() : propertyAddress.tokenize('.').last()), propertyAddress)
                 break;
             case "alias":
                 if (annotation.args.isEmpty()) {
-                    parentContext.errors.add("ERROR: Annotation Alias Has no Argument specified, Hence Annotation Ignored")
+                    mainContext.errors.add("ERROR: Annotation Alias Has no Argument specified, Hence Annotation Ignored")
                 } else {
                     List temp = propertyAddress.tokenize(".")
                     temp.pop()
                     temp << annotation.args.first().trim()
-                    parentContext.aliasedProperties.put(temp.join('.'), propertyAddress)
+                    mainContext.aliasedProperties.put(temp.join('.'), propertyAddress)
+                }
+                break;
+            case "override":
+                if (annotation.args.isEmpty()) {
+                    mainContext.errors.add("ERROR: Annotation Override Has no Argument specified, Hence Annotation Ignored")
+                } else {
+                    mainContext.overrideProperties.put(annotation.args.first().trim(), propertyAddress)
+                }
+                break;
+            case "ignore":
+                parentContext.ignored = true
+                break;
+            case "event":
+                if (annotation.args.size() < 2) {
+                    mainContext.errors.add("ERROR: Annotation Event Has ${annotation.args.size()} Argument specified, Requires 2 Arguments <eventType> <selector>, Hence Annotation Ignored")
+                } else {
+                    mainContext.eventRegistry.put(propertyAddress, [event: annotation.args.first().trim(), selector: annotation.args.last().trim()])
                 }
                 break;
             default:
-                parentContext.errors.add("WARNING: Annotation '${annotation.type}' Not Recognised, Hence Ignored")
+                mainContext.errors.add("WARNING: Annotation '${annotation.type}' Not Recognised, Hence Ignored")
                 break;
         }
     }

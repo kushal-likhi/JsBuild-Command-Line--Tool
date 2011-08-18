@@ -35,16 +35,16 @@ Licence: ${BuildInfo.licence}
 ***********************************************
 """
 
-    public static summaryPoster = {parentContext->"""
+    public static summaryPoster = {mainContext->"""
 *******************SUMMARY*********************
-Total Files Scanned: ${parentContext.filesScanned}
-Total Comment Files Found: ${parentContext.commentsFound}
-Total Properties: ${parentContext.totalProperties}
-Total Packages: ${parentContext.totalPackages}
-Total Lines Scanned: ${parentContext.totalLoc}
-Total Blank Lines: ${parentContext.totalBlankLines}
-Total Lines In Built File: ${parentContext.totalLinesInBuild}
-Target File: ${parentContext.targetFilePath}
+Total Files Scanned: ${mainContext.filesScanned}
+Total Comment Files Found: ${mainContext.commentsFound}
+Total Properties: ${mainContext.totalProperties}
+Total Packages: ${mainContext.totalPackages}
+Total Lines Scanned: ${mainContext.totalLoc}
+Total Blank Lines: ${mainContext.totalBlankLines}
+Total Lines In Built File: ${mainContext.totalLinesInBuild}
+Target File: ${mainContext.targetFilePath}
 ***********************************************
 """}
 

@@ -22,11 +22,11 @@ class JsCommentBuilder implements CommandLineUserInterfaceReady {
     public static String COMMENT_START = "/*" + '\n'
     public static String COMMENT_END = " */" + '\n\n'
 
-    def parentContext
+    def mainContext
 
-    public JsCommentBuilder(File file, parentContext) {
+    public JsCommentBuilder(File file, mainContext) {
         directoryToBeScanned = file
-        this.parentContext = parentContext
+        this.mainContext = mainContext
         showToUserFromTemplate MessageTemplate.COMMENT_FACTORY_ENTRY_NOTICE, [path: directoryToBeScanned.getCanonicalPath()]
     }
 
@@ -42,7 +42,7 @@ class JsCommentBuilder implements CommandLineUserInterfaceReady {
         directoryToBeScanned.eachFileRecurse {file ->
             if (file.getName().endsWith(".comment")) {
                 showToUserFromTemplate MessageTemplate.COMMENT_FACTORY_FOUND_NOTICE, [file: file.getCanonicalPath()]
-                addComment "PACKAGE: " + JsPackageBuilder.determinePackage(file.parentFile, parentContext)
+                addComment "PACKAGE: " + JsPackageBuilder.determinePackage(file.parentFile, mainContext)
                 file.eachLine {line ->
                     addComment line
                 }
@@ -53,8 +53,8 @@ class JsCommentBuilder implements CommandLineUserInterfaceReady {
         }
 
         showToUserFromTemplate MessageTemplate.COMMENT_FACTORY_EXIT_NOTICE, [found: filesFound, scanned: filesScanned]
-        parentContext.filesScanned = filesScanned
-        parentContext.commentsFound = filesFound
+        mainContext.filesScanned = filesScanned
+        mainContext.commentsFound = filesFound
 
         (COMMENT_START + comments + COMMENT_END)
     }

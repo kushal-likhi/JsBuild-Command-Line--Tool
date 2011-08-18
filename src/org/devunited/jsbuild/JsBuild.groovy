@@ -41,6 +41,10 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
     public Map aliasedProperties = [:]
 
+    public Map overrideProperties = [:]
+
+    public Map eventRegistry = [:]
+
     public List errors = []
 
     public List<String> constructors = []

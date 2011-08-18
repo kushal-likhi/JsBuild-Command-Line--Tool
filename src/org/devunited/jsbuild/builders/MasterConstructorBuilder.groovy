@@ -11,10 +11,12 @@ import org.devunited.jsbuild.enricher.CommandLineUserInterfaceReady
  */
 class MasterConstructorBuilder implements CommandLineUserInterfaceReady {
 
-    def parentContext
+    def mainContext
 
-    public MasterConstructorBuilder(parentContext) {
-        this.parentContext = parentContext
+    String indent = "    "
+
+    public MasterConstructorBuilder(mainContext) {
+        this.mainContext = mainContext
     }
 
     public String build() {
@@ -22,18 +24,34 @@ class MasterConstructorBuilder implements CommandLineUserInterfaceReady {
 
         JsAnnotationEngine annotationEngine = new JsAnnotationEngine(data)
 
-        annotationEngine.processAlias(parentContext.aliasedProperties)
+        annotationEngine.processAlias(mainContext.aliasedProperties)
+
+        annotationEngine.processOverrides(mainContext.overrideProperties)
 
         data = annotationEngine.contents
 
         data += "\nwindow.onload = function(){"
-        //call constructors/event handlers here
-        parentContext.constructors.each {
-            data += "\n    ${it}();"
+
+        mainContext.constructors.each {
+            data += "\n${indent}${it}();"
         }
+
+        mainContext.eventRegistry.each {key, val ->
+            data += indentEachLine(annotationEngine.buildEventCode(key, val))
+        }
+
         data += "\n}"
 
         data + '\n'
     }
+
+    private String indentEachLine(String content) {
+        String outBuffer = ""
+        content.eachLine {
+            outBuffer += "\n${indent}${it}"
+        }
+        outBuffer
+    }
+
 
 }

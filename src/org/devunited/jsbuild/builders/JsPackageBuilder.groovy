@@ -13,7 +13,7 @@ class JsPackageBuilder implements CommandLineUserInterfaceReady {
 
     File basePackage
 
-    def parentContext
+    def mainContext
 
     Integer recursionLevel = 1
     Integer recursionSibling = 1
@@ -23,19 +23,19 @@ class JsPackageBuilder implements CommandLineUserInterfaceReady {
         this.recursionSibling = recursionSibling
     }
 
-    JsPackageBuilder(Map options, parentContext) {
+    JsPackageBuilder(Map options, mainContext) {
         this.recursionLevel = options.recursionLevel
         this.recursionSibling = options.recursionSibling
-        this.parentContext = parentContext
+        this.mainContext = mainContext
     }
 
     public String build(File base) {
         basePackage = base
 
-        parentContext.totalPackages++
+        mainContext.totalPackages++
 
         showToUserFromTemplate MessageTemplate.PACKAGE_BUILDER_ENTRY_MESSAGE, [
-                packageName: determinePackage(basePackage, parentContext),
+                packageName: determinePackage(basePackage, mainContext),
                 recursionLevel: recursionLevel,
                 recursionSibling: recursionSibling
         ]
@@ -53,12 +53,12 @@ class JsPackageBuilder implements CommandLineUserInterfaceReady {
                         recursionLevel: recursionLevel,
                         recursionSibling: recursionSibling
                 ],
-                parentContext
+                mainContext
         ).build(basePackage) + (recursionLevel == 1 ? ";" : ""))
     }
 
-    public static String determinePackage(File packageLocation, parentContext) {
-        String basePath = new File((parentContext.baseDir + File.separatorChar + "..")).getCanonicalPath() + File.separatorChar
+    public static String determinePackage(File packageLocation, mainContext) {
+        String basePath = new File((mainContext.baseDir + File.separatorChar + "..")).getCanonicalPath() + File.separatorChar
         String packageDir = packageLocation.getCanonicalPath()
         String packageName = packageDir - basePath
         return packageName.trim().replace('/', '.').replace(File.separator, '.')

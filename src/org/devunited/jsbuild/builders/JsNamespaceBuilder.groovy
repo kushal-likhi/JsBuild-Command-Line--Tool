@@ -19,7 +19,7 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
     String indent = ""
     String closingIndent = ""
 
-    def parentContext
+    def mainContext
 
     def TYPE_PROPERTY = true
     def TYPE_COMMENT = false
@@ -29,10 +29,10 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
         this.recursionSibling = recursionSibling
     }
 
-    JsNamespaceBuilder(Map options, parentContext) {
+    JsNamespaceBuilder(Map options, mainContext) {
         this.recursionLevel = options.recursionLevel
         this.recursionSibling = options.recursionSibling
-        this.parentContext = parentContext
+        this.mainContext = mainContext
     }
 
     public String build(File baseDir) {
@@ -46,7 +46,7 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
         }
 
         showToUserFromTemplate MessageTemplate.NAMESPACE_BUILDER_ENTRY_MESSAGE, [
-                packageName: JsPackageBuilder.determinePackage(namespace, parentContext),
+                packageName: JsPackageBuilder.determinePackage(namespace, mainContext),
                 recursionLevel: recursionLevel,
                 recursionSibling: recursionSibling
         ]
@@ -61,14 +61,14 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
                                     recursionLevel: recursionLevel + 1,
                                     recursionSibling: recursionSibling
                             ],
-                            parentContext
+                            mainContext
                     ).build(file)
                 }, \n"""
                 recursionSibling++
             } else {
                 if (!file.getName().endsWith(".comment")) {
-                    parentContext.totalProperties++
-                    JsFileParser jsFileParser = new JsFileParser(file, parentContext)
+                    mainContext.totalProperties++
+                    JsFileParser jsFileParser = new JsFileParser(file, mainContext)
                     contentBuffer += "${indentEachLine jsFileParser.comments}"
                     contentBuffer += (indentEachLine("${file.getName() - ".js"}: ${jsFileParser.property},"))
                 }
@@ -76,11 +76,11 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
         }
 
         String constructor = "init_${namespace.getCanonicalPath().split(File.separatorChar.toString()).last()}_jsBuild_generated"
-        parentContext.constructors.add(JsPackageBuilder.determinePackage(namespace, parentContext) + "." + constructor)
+        mainContext.constructors.add(JsPackageBuilder.determinePackage(namespace, mainContext) + "." + constructor)
         contentBuffer += indentEachLine("${constructor}: function(){}${(recursionLevel == 1) ? ',' : ''} \n")
 
         if (recursionLevel == 1) {
-            contentBuffer += indentEachLine("MasterConstructor_jsBuild_generated: new function(){${indentEachLine(new MasterConstructorBuilder(parentContext).build())}} \n")
+            contentBuffer += indentEachLine("MasterConstructor_jsBuild_generated: new function(){${indentEachLine(new MasterConstructorBuilder(mainContext).build())}} \n")
         }
 
         return ('{ \n' + contentBuffer + "${closingIndent}}")

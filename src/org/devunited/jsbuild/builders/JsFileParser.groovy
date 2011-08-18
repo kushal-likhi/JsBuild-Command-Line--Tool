@@ -17,12 +17,14 @@ class JsFileParser implements CommandLineUserInterfaceReady {
     String comments
     String property
 
-    def parentContext
+    boolean ignored = false
+
+    def mainContext
 
 
-    JsFileParser(File target, parentContext) {
+    JsFileParser(File target, mainContext) {
         targetFile = target
-        this.parentContext = parentContext
+        this.mainContext = mainContext
         parse()
     }
 
@@ -42,7 +44,7 @@ class JsFileParser implements CommandLineUserInterfaceReady {
     }
 
     public String getComments() {
-        if (parentContext.isFileCommentsEnabled) {
+        if (mainContext.isFileCommentsEnabled) {
             return comments
         } else {
             return ""
@@ -90,28 +92,35 @@ class JsFileParser implements CommandLineUserInterfaceReady {
         boolean isFirst = true
 
         text.eachLine {line ->
-            if (line.trim() != "") {
-                if (!propertyLock && !commentBlockLock && line.trim().startsWith("//")) {
-                    channels.commentChannel += ((isFirst ? '' : '\n') + line)
-                } else if (!propertyLock && !commentBlockLock && line.trim().startsWith("/*")) {
-                    commentBlockLock = true
-                    channels.commentChannel += ((isFirst ? '' : '\n') + line)
-                } else if (!propertyLock && commentBlockLock) {
-                    channels.commentChannel += ((isFirst ? '' : '\n') + line)
-                    if (line.trim().endsWith("*/")) {
-                        commentBlockLock = false
+            if (!ignored) {
+                if (line.trim() != "") {
+                    if (!propertyLock && !commentBlockLock && line.trim().startsWith("//")) {
+                        channels.commentChannel += ((isFirst ? '' : '\n') + line)
+                    } else if (!propertyLock && !commentBlockLock && line.trim().startsWith("/*")) {
+                        commentBlockLock = true
+                        channels.commentChannel += ((isFirst ? '' : '\n') + line)
+                    } else if (!propertyLock && commentBlockLock) {
+                        channels.commentChannel += ((isFirst ? '' : '\n') + line)
+                        if (line.trim().endsWith("*/")) {
+                            commentBlockLock = false
+                        }
+                    } else if (!propertyLock && !commentBlockLock && line.trim().startsWith("@")) {
+                        new JsAnnotationProcessor(line, targetFile, mainContext, this)
+                    } else {
+                        channels.propertyChannel += ((isFirst ? '' : '\n') + line)
+                        propertyLock = true
                     }
-                } else if (!propertyLock && !commentBlockLock && line.trim().startsWith("@")) {
-                    new JsAnnotationProcessor(line, targetFile, parentContext)
+                    isFirst = false
                 } else {
-                    channels.propertyChannel += ((isFirst ? '' : '\n') + line)
-                    propertyLock = true
+                    mainContext.totalBlankLines++
                 }
-                isFirst = false
-            } else {
-                parentContext.totalBlankLines++
+                mainContext.totalLoc++
             }
-            parentContext.totalLoc++
+        }
+
+        if (ignored) {
+            channels.commentChannel = "Property Ignored"
+            channels.propertyChannel = "null"
         }
 
         channels
