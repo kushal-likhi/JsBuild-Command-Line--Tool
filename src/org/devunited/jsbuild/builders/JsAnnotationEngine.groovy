@@ -23,27 +23,27 @@ class JsAnnotationEngine implements CommandLineUserInterfaceReady {
     }
 
     public void processExports(Map exportedProperties) {
-        showToUser "[Annotation Engine] Building Exports"
         exportedProperties.each {key, value ->
+            showToUser "[Annotation Engine] Exporting Property"
             addLine "var ${key} = ${value};"
+            showToUser "Done. Exported '${value}' Property with name '${key}'"
         }
-        showToUser "Done. Exported ${exportedProperties.size()} Properties"
     }
 
     public void processAlias(Map aliasedProperties) {
-        showToUser "[Annotation Engine] Building Aliases"
         aliasedProperties.each {key, value ->
+            showToUser "[Annotation Engine] Building Alias"
             addLine "${key} = ${value};"
+            showToUser "Done. Created Alias '${key}' for Property '${value}'"
         }
-        showToUser "Done. Created ${aliasedProperties.size()} Alias"
     }
 
     public void processOverrides(Map overrideProperties) {
-        showToUser "[Annotation Engine] Building Overrides"
         overrideProperties.each {key, value ->
+            showToUser "[Annotation Engine] Building Override"
             addLine "${key} = ${value};"
+            showToUser "Done. Overrided Property '${key}' With '${value}'"
         }
-        showToUser "Done. Overrided ${overrideProperties.size()} Properties"
     }
 
     public String buildEventCode(String handler, Map args) {

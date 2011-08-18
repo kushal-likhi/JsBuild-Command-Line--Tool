@@ -76,62 +76,7 @@
     <favorites_list name="jsbuild" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="JsBuild.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="60" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsAnnotationProcessor.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="89" selection-start="3261" selection-end="3261" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsAnnotationEngine.groovy" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationEngine.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="131" selection-start="3390" selection-end="3390" vertical-scroll-proportion="0.8324022">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsFileParser.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsFileParser.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="27" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsNamespaceBuilder.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="9" selection-start="3062" selection-end="3246" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MasterConstructorBuilder.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="63" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -597,7 +542,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="720" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -611,7 +556,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32927758" sideWeight="0.67001677" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39939255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3285171" sideWeight="0.67001677" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3285171" sideWeight="0.67001677" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -767,7 +712,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsFileParser.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="27" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.0">
+        <state line="94" column="27" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.2913669">
           <folding />
         </state>
       </provider>
@@ -781,28 +726,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="9" selection-start="3062" selection-end="3246" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="89" selection-start="3261" selection-end="3261" vertical-scroll-proportion="0.0">
+        <state line="95" column="9" selection-start="3062" selection-end="3246" vertical-scroll-proportion="0.78417265">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="63" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.0">
+        <state line="39" column="63" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.50087875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="89" selection-start="3261" selection-end="3261" vertical-scroll-proportion="0.6368715">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationEngine.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="131" selection-start="3390" selection-end="3390" vertical-scroll-proportion="0.8324022">
+        <state line="18" column="36" selection-start="493" selection-end="493" vertical-scroll-proportion="-1.2122302">
           <folding />
         </state>
       </provider>
