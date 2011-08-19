@@ -21,6 +21,8 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
     public String targetFilePath = ""
 
+    public minFilePath = "N/A"
+
     public boolean isFileCommentsEnabled = true
 
     public Integer filesScanned = 0
@@ -139,7 +141,23 @@ class JsBuild implements CommandLineUserInterfaceReady {
         builderState "Writing buffer to file"
         targetFile.write targetFileContents
         targetFileContents.eachLine {totalLinesInBuild++}
-        showToUser "File Saved Successfully -> ${targetFile.getCanonicalPath()}"
+        showToUser "File Saved Successfully -> ${targetFilePath}"
+
+
+
+        if (optionAccessor.m) {
+            putLineBreakWithHeight 1
+            builderState "Building and Saving the minnified JavaScript file"
+            minFilePath = targetFilePath + ".min.js"
+            String[] arg = [targetFilePath, "-o", minFilePath]
+            try {
+                com.yahoo.platform.yui.compressor.Bootstrap.main(arg)
+                showToUser "File Saved Successfully -> ${minFilePath}"
+            } catch (Exception e) {
+                showToUser "Unable To Minnify The File"
+                minFilePath = "ERROR OCCOURED WHILE BUILDING"
+            }
+        }
 
 
 
@@ -148,8 +166,10 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
         if (!errors.isEmpty()) {
             showToUser "NOTE: There Were Few Errors/Warnings During Build"
-            putLineBreakWithHeight 1
-            errors.each {showToUser it}
+            showToUser "-------------------------------------------------"
+            errors.each {
+                showToUser it
+            }
             putLineBreakWithHeight 2
         }
 

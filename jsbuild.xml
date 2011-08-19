@@ -148,23 +148,27 @@
   <path id="jsbuild.module.production.classpath">
     <path refid="${module.jdk.classpath.jsbuild}"/>
     <path refid="library.groovy-1.7.5.classpath"/>
+    <pathelement location="${basedir}/lib/yuicompressor-2.4.6.jar"/>
   </path>
   
   <path id="jsbuild.runtime.production.module.classpath">
     <pathelement location="${jsbuild.output.dir}"/>
     <path refid="library.groovy-1.7.5.classpath"/>
+    <pathelement location="${basedir}/lib/yuicompressor-2.4.6.jar"/>
   </path>
   
   <path id="jsbuild.module.classpath">
     <path refid="${module.jdk.classpath.jsbuild}"/>
     <pathelement location="${jsbuild.output.dir}"/>
     <path refid="library.groovy-1.7.5.classpath"/>
+    <pathelement location="${basedir}/lib/yuicompressor-2.4.6.jar"/>
   </path>
   
   <path id="jsbuild.runtime.module.classpath">
     <pathelement location="${jsbuild.testoutput.dir}"/>
     <pathelement location="${jsbuild.output.dir}"/>
     <path refid="library.groovy-1.7.5.classpath"/>
+    <pathelement location="${basedir}/lib/yuicompressor-2.4.6.jar"/>
   </path>
   
   

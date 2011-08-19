@@ -76,7 +76,26 @@
     <favorites_list name="jsbuild" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="JsBuild.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="153" column="68" selection-start="4623" selection-end="4626" vertical-scroll-proportion="0.62565905">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroovyJarPackager.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/buildUtils/GroovyJarPackager.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="40" selection-start="1715" selection-end="1715" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -90,22 +109,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/CommentFactory.groovy" />
-        <option value="$USER_HOME$/aptanaWorkspace/WebGP/src/yo.js" />
-        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/enricher/CommandLineUserInterfaceReady.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/BuildInfo.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnotationImplementor.java" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/messages/MessageTemplate.groovy" />
-        <option value="$PROJECT_DIR$/jsbuild.xml" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsCommentBuilder.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsPackageBuilder.groovy" />
-        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/messages/ConsolePosters.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsFileParser.groovy" />
-        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationEngine.groovy" />
+        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/enricher/CommandLineUserInterfaceReady.groovy" />
+        <option value="$PROJECT_DIR$/jsbuild.xml" />
+        <option value="$PROJECT_DIR$/buildUtils/GroovyJarPackager.groovy" />
+        <option value="$USER_HOME$/aptanaWorkspace/WebGP/src/minitest.js" />
+        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy" />
+        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/messages/ConsolePosters.groovy" />
       </list>
     </option>
   </component>
@@ -160,6 +179,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -294,22 +314,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsbuild" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsbuild" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="buildUtils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Favorites" />
       <pane id="Scope" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="true" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.lastSelected" value="reference.plugin.settings.project.settings.cfml" />
     <property name="recentsLimit" value="5" />
@@ -542,25 +575,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="720" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67001677" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32927758" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32927758" sideWeight="0.67001677" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39939255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3285171" sideWeight="0.67001677" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3285171" sideWeight="0.67001677" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -644,110 +677,100 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/aptanaWorkspace/WebGP/src/yo.js">
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsPackageBuilder.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="30" selection-start="313" selection-end="313" vertical-scroll-proportion="-1.622807" />
+        <state line="47" column="64" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.30167598" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/enricher/CommandLineUserInterfaceReady.groovy">
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsFileParser.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="19" selection-start="1827" selection-end="1827" vertical-scroll-proportion="0.57894737" />
+        <state line="94" column="27" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.2913669" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/BuildInfo.groovy">
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/templates/TemplateBuilder.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="30" selection-start="488" selection-end="488" vertical-scroll-proportion="0.54545456">
+        <state line="11" column="50" selection-start="316" selection-end="316" vertical-scroll-proportion="0.3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="9" selection-start="3062" selection-end="3246" vertical-scroll-proportion="0.78417265" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="63" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.50087875" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="89" selection-start="3261" selection-end="3261" vertical-scroll-proportion="0.6368715" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationEngine.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="36" selection-start="493" selection-end="493" vertical-scroll-proportion="-1.2122302" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/yuicompressor-2.4.6.jar!/com/yahoo/platform/yui/compressor/Bootstrap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="24" selection-start="346" selection-end="346" vertical-scroll-proportion="0.24816176">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/messages/MessageTemplate.groovy">
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/enricher/CommandLineUserInterfaceReady.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="36" selection-start="1575" selection-end="1575" vertical-scroll-proportion="0.83633095">
+        <state line="54" column="45" selection-start="1936" selection-end="1936" vertical-scroll-proportion="0.63309354">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jsbuild.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="66" selection-start="5066" selection-end="5066" vertical-scroll-proportion="0.3500931">
+        <state line="128" column="51" selection-start="5229" selection-end="5229" vertical-scroll-proportion="0.51258993">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buildUtils/groovyclasspath">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="31" selection-end="31" vertical-scroll-proportion="0.027272727">
+        <state line="1" column="0" selection-start="31" selection-end="31" vertical-scroll-proportion="0.02636204">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsCommentBuilder.groovy">
+    <entry file="file://$USER_HOME$/aptanaWorkspace/WebGP/src/minitest.js.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="8" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0">
+        <state line="0" column="3090" selection-start="3090" selection-end="3090" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/aptanaWorkspace/WebGP/src/minitest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="27" selection-start="4993" selection-end="4993" vertical-scroll-proportion="0.7032374">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/messages/ConsolePosters.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="61" selection-start="1120" selection-end="1120" vertical-scroll-proportion="1.0363636">
+        <state line="49" column="8" selection-start="1563" selection-end="1563" vertical-scroll-proportion="0.81546575">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsPackageBuilder.groovy">
+    <entry file="file://$PROJECT_DIR$/buildUtils/GroovyJarPackager.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="64" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.30167598">
+        <state line="44" column="40" selection-start="1715" selection-end="1715" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="60" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsFileParser.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="27" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.2913669">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/templates/TemplateBuilder.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="50" selection-start="316" selection-end="316" vertical-scroll-proportion="0.3">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="9" selection-start="3062" selection-end="3246" vertical-scroll-proportion="0.78417265">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="63" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.50087875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="89" selection-start="3261" selection-end="3261" vertical-scroll-proportion="0.6368715">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationEngine.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="36" selection-start="493" selection-end="493" vertical-scroll-proportion="-1.2122302">
+        <state line="153" column="68" selection-start="4623" selection-end="4626" vertical-scroll-proportion="0.62565905">
           <folding />
         </state>
       </provider>
@@ -765,11 +788,6 @@
               </list>
             </option>
           </splitter-proportions>
-        </settings>
-      </state>
-      <state key="Copyright.UI">
-        <settings>
-          <splitter-proportions />
         </settings>
       </state>
       <state key="FacetStructureConfigurable.UI">
@@ -815,7 +833,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -831,11 +848,6 @@
               </list>
             </option>
           </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions />
         </settings>
       </state>
     </states>

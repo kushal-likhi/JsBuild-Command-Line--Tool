@@ -45,6 +45,7 @@ Total Lines Scanned: ${mainContext.totalLoc}
 Total Blank Lines: ${mainContext.totalBlankLines}
 Total Lines In Built File: ${mainContext.totalLinesInBuild}
 Target File: ${mainContext.targetFilePath}
+Minified File: ${mainContext.minFilePath}
 ***********************************************
 """}
 

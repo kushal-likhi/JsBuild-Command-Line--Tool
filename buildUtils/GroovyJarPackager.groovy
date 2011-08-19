@@ -39,6 +39,7 @@ File currentDir = new File( "." )
 ant.jar( destfile: destFile, compress: true, index: true ) {
 
   zipgroupfileset( dir: currentDir, includes: sourceFile )
+  zipgroupfileset( dir: currentDir, includes: "lib/yuicompressor-2.4.6.jar" )
   zipgroupfileset( dir: groovyHomeDir, includes: 'embeddable/groovy-all-*.jar' )
   zipgroupfileset( dir: groovyHomeDir, includes: 'lib/commons*.jar' )
 
