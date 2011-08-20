@@ -39,7 +39,11 @@ class JsFileParser implements CommandLineUserInterfaceReady {
         commentBuffer = channels.commentChannel
         propertyBuffer = channels.propertyChannel
 
-        comments = decorateComments(commentBuffer)
+        if (commentBuffer.trim().length() > 0) {
+            comments = decorateComments(commentBuffer)
+        } else {
+            comments = commentBuffer.trim()
+        }
         property = removeBlankLines(propertyBuffer)
     }
 

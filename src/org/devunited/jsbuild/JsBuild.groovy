@@ -33,6 +33,8 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
     public Integer totalPackages = 0
 
+    public Integer totalConstructors = 0
+
     public Integer totalLoc = 0
 
     public Integer totalBlankLines = 0

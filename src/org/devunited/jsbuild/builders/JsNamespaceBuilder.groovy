@@ -24,6 +24,8 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
     def TYPE_PROPERTY = true
     def TYPE_COMMENT = false
 
+    boolean hasConstructor = false
+
     JsNamespaceBuilder(Integer recursionLevel, Integer recursionSibling) {
         this.recursionLevel = recursionLevel
         this.recursionSibling = recursionSibling
@@ -66,8 +68,13 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
                 }, \n"""
                 recursionSibling++
             } else {
-                if (!file.getName().endsWith(".comment")) {
-                    mainContext.totalProperties++
+                if (file.getName().endsWith(".js")) {
+                    if (file.getName() == "Constructor.js") {
+                        hasConstructor = true
+                        mainContext.totalConstructors++
+                    } else {
+                        mainContext.totalProperties++
+                    }
                     JsFileParser jsFileParser = new JsFileParser(file, mainContext)
                     contentBuffer += "${indentEachLine jsFileParser.comments}"
                     contentBuffer += (indentEachLine("${file.getName() - ".js"}: ${jsFileParser.property},"))
@@ -77,7 +84,8 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
 
         String constructor = "init_${namespace.getCanonicalPath().split(File.separatorChar.toString()).last()}_jsBuild_generated"
         mainContext.constructors.add(JsPackageBuilder.determinePackage(namespace, mainContext) + "." + constructor)
-        contentBuffer += indentEachLine("${constructor}: function(){}${(recursionLevel == 1) ? ',' : ''} \n")
+        String constructorReference = JsPackageBuilder.determinePackage(namespace, mainContext) + "." + "Constructor()"
+        contentBuffer += indentEachLine("${constructor}: function(){${hasConstructor ? constructorReference : ''}}${(recursionLevel == 1) ? ',' : ''} \n")
 
         if (recursionLevel == 1) {
             contentBuffer += indentEachLine("MasterConstructor_jsBuild_generated: new function(){${indentEachLine(new MasterConstructorBuilder(mainContext).build())}} \n")
@@ -93,5 +101,6 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
         }
         outBuffer
     }
+
 
 }

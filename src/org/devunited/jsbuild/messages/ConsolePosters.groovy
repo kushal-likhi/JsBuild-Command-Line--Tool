@@ -41,6 +41,7 @@ Total Files Scanned: ${mainContext.filesScanned}
 Total Comment Files Found: ${mainContext.commentsFound}
 Total Properties: ${mainContext.totalProperties}
 Total Packages: ${mainContext.totalPackages}
+Total Constructors Defined: ${mainContext.totalConstructors}
 Total Lines Scanned: ${mainContext.totalLoc}
 Total Blank Lines: ${mainContext.totalBlankLines}
 Total Lines In Built File: ${mainContext.totalLinesInBuild}

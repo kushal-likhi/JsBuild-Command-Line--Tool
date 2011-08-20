@@ -49,14 +49,15 @@ class JsAnnotationEngine implements CommandLineUserInterfaceReady {
 
     public String processIntervals(String identifier, Map args) {
         String data
-            showToUser "[Annotation Engine] Building Interval"
-            data = TemplateBuilder.buildTemplate(codeTemplates.createInterval,
-                    [
-                            interval: args.interval,
-                            target: args.target
-                    ]
-            )
-            showToUser "Done. Added Interval '${identifier}' With '${args}'"
+        showToUser "[Annotation Engine] Building Interval"
+        data = TemplateBuilder.buildTemplate(codeTemplates.createInterval,
+                [
+                        interval: args.interval,
+                        target: args.target,
+                        name: identifier
+                ]
+        )
+        showToUser "Done. Added Interval '${identifier}' With '${args}'"
         data
     }
 
@@ -103,7 +104,7 @@ class JsAnnotationEngine implements CommandLineUserInterfaceReady {
             eventHandlerIdBased: "if(document.getElementById('###id###')){document.getElementById('###id###').###event### = ###handler###}",
             eventHandlerIdBasedTryCatch: "try{document.getElementById('###id###').###event### = ###handler###}catch(c){}",
             eventHandlerImplicit: "###object###.###event### = ###handler###;",
-            createInterval: "setInterval('###target###()',###interval###);",
+            createInterval: "###name### = setInterval('###target###()',###interval###);",
             eventHandlerClassBased: "try{var aht = document.getElementsByTagName(\"*\");for(idx in aht){if(aht[idx].className == \"###className###\"){aht[idx].###event### = ###handler###}}}catch(c){}"
     ]
 
