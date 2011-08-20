@@ -79,6 +79,13 @@ class JsAnnotationProcessor implements CommandLineUserInterfaceReady {
                     mainContext.eventRegistry.put(propertyAddress, [event: annotation.args.first().trim(), selector: annotation.args.last().trim()])
                 }
                 break;
+            case "interval":
+                if (annotation.args.size() < 2) {
+                    mainContext.errors.add("ERROR: Annotation Interval Has ${annotation.args.size()} Argument specified, Requires 2 Arguments <IntervalIdentifier> <timeInMills>, Hence Annotation Ignored")
+                } else {
+                    mainContext.intervalRegistry.put(annotation.args.first().trim(), [target: propertyAddress, interval: annotation.args.last().trim()])
+                }
+                break;
             default:
                 mainContext.errors.add("WARNING: Annotation '${annotation.type}' Not Recognised, Hence Ignored")
                 break;

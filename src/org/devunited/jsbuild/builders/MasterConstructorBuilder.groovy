@@ -40,6 +40,10 @@ class MasterConstructorBuilder implements CommandLineUserInterfaceReady {
             data += indentEachLine(annotationEngine.buildEventCode(key, val))
         }
 
+        mainContext.intervalRegistry.each{key,val->
+            data += indentEachLine(annotationEngine.processIntervals(key,val))
+        }
+
         data += "\n}"
 
         data + '\n'
@@ -52,6 +56,4 @@ class MasterConstructorBuilder implements CommandLineUserInterfaceReady {
         }
         outBuffer
     }
-
-
 }

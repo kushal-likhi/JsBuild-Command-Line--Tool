@@ -2,6 +2,7 @@ package org.devunited.jsbuild.builders
 
 import org.devunited.jsbuild.enricher.CommandLineUserInterfaceReady
 import org.devunited.jsbuild.templates.TemplateBuilder
+import groovy.text.TemplateEngine
 
 /**
  * Created by IntelliJ IDEA.
@@ -44,6 +45,19 @@ class JsAnnotationEngine implements CommandLineUserInterfaceReady {
             addLine "${key} = ${value};"
             showToUser "Done. Overrided Property '${key}' With '${value}'"
         }
+    }
+
+    public String processIntervals(String identifier, Map args) {
+        String data
+            showToUser "[Annotation Engine] Building Interval"
+            data = TemplateBuilder.buildTemplate(codeTemplates.createInterval,
+                    [
+                            interval: args.interval,
+                            target: args.target
+                    ]
+            )
+            showToUser "Done. Added Interval '${identifier}' With '${args}'"
+        data
     }
 
     public String buildEventCode(String handler, Map args) {
@@ -89,6 +103,7 @@ class JsAnnotationEngine implements CommandLineUserInterfaceReady {
             eventHandlerIdBased: "if(document.getElementById('###id###')){document.getElementById('###id###').###event### = ###handler###}",
             eventHandlerIdBasedTryCatch: "try{document.getElementById('###id###').###event### = ###handler###}catch(c){}",
             eventHandlerImplicit: "###object###.###event### = ###handler###;",
+            createInterval: "setInterval('###target###()',###interval###);",
             eventHandlerClassBased: "try{var aht = document.getElementsByTagName(\"*\");for(idx in aht){if(aht[idx].className == \"###className###\"){aht[idx].###event### = ###handler###}}}catch(c){}"
     ]
 

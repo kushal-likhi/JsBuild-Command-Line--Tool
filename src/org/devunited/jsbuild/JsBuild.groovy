@@ -21,7 +21,7 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
     public String targetFilePath = ""
 
-    public minFilePath = "N/A"
+    public String minFilePath = "N/A"
 
     public boolean isFileCommentsEnabled = true
 
@@ -46,6 +46,8 @@ class JsBuild implements CommandLineUserInterfaceReady {
     public Map overrideProperties = [:]
 
     public Map eventRegistry = [:]
+
+    public Map intervalRegistry = [:]
 
     public List errors = []
 
