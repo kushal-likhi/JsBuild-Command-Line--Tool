@@ -10,10 +10,10 @@ targetJarName="jsBuild.jar"
 basePackage="org"
 commandName="jsbuild"
 groovyHome="/opt/groovy"
-
+homeDir="/home/kushal/.jsbuild"
 
 #############################################
 
 
 # Calling here
-./buildUtils/buildProject $antFile $buildSource $mainClass $targetJarName $basePackage $commandName $groovyHome
+./buildUtils/buildProject $antFile $buildSource $mainClass $targetJarName $basePackage $commandName $groovyHome $homeDir

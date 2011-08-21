@@ -2,6 +2,8 @@ package org.devunited.jsbuild.builders
 
 import org.devunited.jsbuild.enricher.CommandLineUserInterfaceReady
 import org.devunited.jsbuild.messages.MessageTemplate
+import org.devunited.jsbuild.component.ComponentRegistryAccess
+import org.devunited.jsbuild.component.ComponentRegistryData
 
 /**
  * Created by IntelliJ IDEA.
@@ -55,6 +57,70 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
 
         String contentBuffer = ""
 
+        if (recursionLevel == 1) {
+            Map componentRegistry = new ComponentRegistryAccess(mainContext).getRegistry()
+            List<ComponentRegistryData> components = []
+            namespace.eachFile {file ->
+                if (file.getName() == "Components.txt") {
+                    new JsFileParser(file, mainContext).property.eachLine {line ->
+                        if (componentRegistry.containsKey(line.trim())) {
+                            components.add(
+                                    new ComponentRegistryData(
+                                            name: componentRegistry[line.trim()].name,
+                                            basePackage: componentRegistry[line.trim()].basePackage,
+                                            exportName: componentRegistry[line.trim()].exportName,
+                                            priority: Integer.parseInt(componentRegistry[line.trim()].priority)
+                                    )
+                            )
+                        } else {
+                            mainContext.errors.add("ERROR: Unable To Add Component: ${line.trim()}. Component not Found")
+                        }
+                    }
+                }
+            }
+            components = components.sort {it.priority}
+            components.each {ComponentRegistryData registry ->
+                File file = new File(mainContext.homeDir + File.separatorChar + registry.basePackage)
+                if (file.exists()) {
+                    contentBuffer += """${indent}${
+                        new JsPackageBuilder(
+                                [
+                                        recursionLevel: recursionLevel + 1,
+                                        recursionSibling: recursionSibling
+                                ],
+                                mainContext
+                        ).build(file)
+                    }, \n"""
+                } else {
+                    mainContext.errors.add("ERROR: Unable To Add Component: ${registry.name}. Component not Found")
+                }
+            }
+            contentBuffer.replace("jsbuild_runtime_base_package", JsPackageBuilder.determinePackage(namespace, mainContext))
+        }
+
+        namespace.eachFile {file ->
+            if (file.getName() == "Includes.txt") {
+                new JsFileParser(file, mainContext).property.eachLine {line ->
+                    if (line.trim() != "") {
+                        File source = new File(line.trim())
+                        if (source.exists()) {
+                            contentBuffer += """${indent}${
+                                new JsPackageBuilder(
+                                        [
+                                                recursionLevel: recursionLevel + 1,
+                                                recursionSibling: recursionSibling
+                                        ],
+                                        mainContext
+                                ).build(source)
+                            }, \n"""
+                        } else {
+                            mainContext.errors.add("ERROR: Unable To Include: ${line.trim()}. Directory not Found")
+                        }
+                    }
+                }
+            }
+        }
+
         namespace.eachFile {file ->
             if (file.isDirectory()) {
                 contentBuffer += """${indent}${
@@ -101,6 +167,5 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
         }
         outBuffer
     }
-
 
 }

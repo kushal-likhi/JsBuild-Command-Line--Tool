@@ -45,6 +45,7 @@ public static interface CommandLineUserInterfaceReady {
         cli.s(longOpt: 'source', argName: 'source', required: false, args: 1, 'Sources Directory Path')
         cli.t(longOpt: 'target', argName: 'target', required: false, args: 1, 'target Directory Path')
         cli.f(longOpt: 'filename', argName: 'TargetFile', required: false, args: 1, 'Name of the file to be generated')
+        cli.b(longOpt: 'home', argName: 'Home Directory', required: false, args: 1, 'Home Directory For The Install')
         cli.e(longOpt: 'echo', required: false, 'Echo the Final Output on the console')
         cli.m(longOpt: 'minify', required: false, 'Also save a minified Js file')
         cli.n(longOpt: 'nofilecomments', required: false, 'if You dont want file comments to be echoed in the final build')

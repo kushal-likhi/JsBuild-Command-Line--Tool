@@ -82,6 +82,9 @@
   <property name="project.jdk.classpath" value="jdk.classpath.1.6"/>
   
   
+  <!-- Project Libraries -->
+  
+  
   <!-- Global Libraries -->
   
   <path id="library.groovy-1.7.5.classpath">

@@ -1,0 +1,4 @@
+NAME, PACKAGE BASE, EXPORT NAME, PRIORITY, HELP,  AUTHOR, EMAIL, DESCRIPTION
+STRING UTILS, string_utils, false, 1, http://www.devunited.org/wiki/jsbuild/component/string_utils, Kushal Likhi, kushal.likhi@gmail.com, Enriches the JavaScript Strings
+ARRAY UTILS, array_utils, false, 1, http://www.devunited.org/wiki/jsbuild/component/array_utils, Kushal Likhi, kushal.likhi@gmail.com, Enriches the JavaScript Arrays
+

@@ -19,6 +19,8 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
     public String baseDir = ""
 
+    public String homeDir = ""
+
     public String targetFilePath = ""
 
     public String minFilePath = "N/A"
@@ -88,6 +90,7 @@ class JsBuild implements CommandLineUserInterfaceReady {
         }
         File targetFile = new File(targetDir.getCanonicalPath() + File.separatorChar + optionAccessor.f)
         baseDir = sourceDir.getCanonicalPath()
+        homeDir = optionAccessor.b
 
 
         showToUserFromTemplate MessageTemplate.WORKING_DIR, [workDir: presentWorkingDirectory.getCanonicalPath()]

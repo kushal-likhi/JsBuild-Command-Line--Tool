@@ -12,6 +12,7 @@ targetJarName=$4
 basePackage=$5
 commandName=$6
 groovyHome=$7
+homeDir=$8
 
 echo "antFile = $antFile"
 echo "buildSource = $buildSource"
@@ -20,6 +21,7 @@ echo "targetJarName = $targetJarName"
 echo "basePackage = $basePackage"
 echo "commandName = $commandName"
 echo "groovyHome = $groovyHome"
+echo "homeDir = $homeDir"
 echo ""
 pd=`pwd`
 echo "Path Set To : $pd"
@@ -50,7 +52,7 @@ echo "----[Builder] JAR Created"
 
 echo ""
 echo "----[Builder] BUILDING LAUNCHER"
-echo "java -jar /sbin/$targetJarName \$*" > $commandName
+echo "java -jar /sbin/$targetJarName \$* -b $homeDir" > $commandName
 echo "----[Builder] Build OK"
 
 chmod 777 $commandName
@@ -64,11 +66,19 @@ rm -rfv temp-kbuild.jar
 
 echo ""
 echo "----[Builder] INSTALLING COMMAND"
-echo "--> SUPER USER PRIVELEDGES REQUIRED TO INSTALL COMMAND" 
+echo "--> SUPER USER PRIVELEDGES REQUIRED TO INSTALL COMMAND"
 sudo cp -fp $commandName /sbin
 sudo cp -fp $targetJarName /sbin
 echo "----[Builder] Installation Complete. Command installed -> 'jsbuild'"
+
+echo ""
+echo "----[Builder] Installing Components"
+rm -rfv $homeDir
+mkdir $homeDir
+cp -frpv components/* $homeDir
+echo "----[Builder] Installation Complete."
+
+echo ""
 echo "----[Builder] Saving Files"
 mv -vf $commandName target/
-mv -vf $targetJarName target/ 
-
+mv -vf $targetJarName target/
