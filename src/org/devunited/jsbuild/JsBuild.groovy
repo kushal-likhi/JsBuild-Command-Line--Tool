@@ -19,6 +19,8 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
     public String baseDir = ""
 
+    public String baseDirBackup = ""
+
     public String homeDir = ""
 
     public String targetFilePath = ""
@@ -26,6 +28,10 @@ class JsBuild implements CommandLineUserInterfaceReady {
     public String minFilePath = "N/A"
 
     public boolean isFileCommentsEnabled = true
+
+    public boolean modeRemoteBuild = false
+
+    public String basePackage = ""
 
     public Integer filesScanned = 0
 
@@ -90,6 +96,7 @@ class JsBuild implements CommandLineUserInterfaceReady {
         }
         File targetFile = new File(targetDir.getCanonicalPath() + File.separatorChar + optionAccessor.f)
         baseDir = sourceDir.getCanonicalPath()
+        baseDirBackup = sourceDir.getCanonicalPath()
         homeDir = optionAccessor.b
 
 
@@ -128,6 +135,7 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
 
         builderState "Starting Recursive Build"
+        basePackage = JsPackageBuilder.determinePackage(sourceDir, this)
         targetFileContents += new JsPackageBuilder([recursionLevel: 1, recursionSibling: 1], this).build(sourceDir)
         JsAnnotationEngine annotationEngine = new JsAnnotationEngine(targetFileContents)
         annotationEngine.processExports(exportedProperties)

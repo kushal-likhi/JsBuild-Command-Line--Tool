@@ -1,3 +1,3 @@
 function(){
-    String.prototype.startsWith = jsbuild_runtime_base_package.string_utils.enrichers.startsWith;
+    String.prototype.startsWith = jsbuildRuntimeBasePackage.string_utils.enrichers.startsWith;
 }

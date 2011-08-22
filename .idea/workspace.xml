@@ -18,11 +18,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buildUtils/buildProject" afterPath="$PROJECT_DIR$/buildUtils/buildProject" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/string_utils/Constructor.js" afterPath="$PROJECT_DIR$/components/string_utils/Constructor.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsbuild.xml" afterPath="$PROJECT_DIR$/jsbuild.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kbuild" afterPath="$PROJECT_DIR$/kbuild" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/BuildInfo.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/BuildInfo.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsPackageBuilder.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsPackageBuilder.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/enricher/CommandLineUserInterfaceReady.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/enricher/CommandLineUserInterfaceReady.groovy" />
     </list>
     <ignored path="jsbuild.iws" />
@@ -90,7 +92,7 @@
       <file leaf-file-name="JsBuild.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="61" selection-start="4693" selection-end="4693" vertical-scroll-proportion="0.37272727">
+            <state line="142" column="54" selection-start="4242" selection-end="4242" vertical-scroll-proportion="0.5079086">
               <folding />
             </state>
           </provider>
@@ -99,7 +101,7 @@
       <file leaf-file-name="JsNamespaceBuilder.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="32" selection-start="4902" selection-end="4902" vertical-scroll-proportion="0.0">
+            <state line="24" column="45" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,16 +110,7 @@
       <file leaf-file-name="JsPackageBuilder.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsPackageBuilder.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="43" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constructor.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/string_utils/Constructor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="31" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
+            <state line="34" column="43" selection-start="905" selection-end="905" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -146,11 +139,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsFileParser.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/enricher/CommandLineUserInterfaceReady.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/BuildInfo.groovy" />
         <option value="$PROJECT_DIR$/components/component.registry" />
-        <option value="$PROJECT_DIR$/components/string_utils/Constructor.js" />
         <option value="$PROJECT_DIR$/components/string_utils/enrichers/startsWith.js" />
         <option value="$PROJECT_DIR$/buildUtils/install" />
         <option value="$PROJECT_DIR$/kbuild" />
@@ -160,7 +151,9 @@
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/component/ComponentRegistryData.groovy" />
         <option value="$PROJECT_DIR$/jsbuild.xml" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/component/ComponentRegistryAccess.groovy" />
+        <option value="$PROJECT_DIR$/components/string_utils/Constructor.js" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy" />
+        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsPackageBuilder.groovy" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy" />
       </list>
     </option>
@@ -375,6 +368,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsbuild" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsbuild" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="string_utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -633,7 +644,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="720" extended-state="1" />
+    <frame x="0" y="24" width="1366" height="720" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -736,13 +747,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/buildUtils/GroovyJarPackager.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="40" selection-start="1715" selection-end="1715" vertical-scroll-proportion="0.7">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/string_utils/enrichers/startsWith.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="68" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0">
@@ -767,13 +771,6 @@
     <entry file="jar:///opt/groovy/lib/groovy-1.7.5.jar!/org/codehaus/groovy/runtime/DefaultGroovyMethods.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="890" column="33" selection-start="52280" selection-end="52280" vertical-scroll-proportion="0.34888437">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/component.registry">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="414" selection-end="414" vertical-scroll-proportion="0.11173184">
           <folding />
         </state>
       </provider>
@@ -806,20 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="22" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsPackageBuilder.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="43" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jsbuild.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="125" column="66" selection-start="5101" selection-end="5101" vertical-scroll-proportion="0.9164345">
@@ -827,23 +810,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="75" selection-start="1885" selection-end="1885" vertical-scroll-proportion="0.45251396">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/components/string_utils/Constructor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="31" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
+        <state line="2" column="49" selection-start="108" selection-end="108" vertical-scroll-proportion="0.054545455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/component.registry">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="414" selection-end="414" vertical-scroll-proportion="0.107913665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="22" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="32" selection-start="4902" selection-end="4902" vertical-scroll-proportion="0.0">
+        <state line="24" column="45" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsPackageBuilder.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="43" selection-start="905" selection-end="905" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="61" selection-start="4693" selection-end="4693" vertical-scroll-proportion="0.37272727">
+        <state line="142" column="54" selection-start="4242" selection-end="4242" vertical-scroll-proportion="0.5079086">
           <folding />
         </state>
       </provider>

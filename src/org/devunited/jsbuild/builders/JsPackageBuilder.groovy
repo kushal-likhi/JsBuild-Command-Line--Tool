@@ -61,6 +61,10 @@ class JsPackageBuilder implements CommandLineUserInterfaceReady {
         String basePath = new File((mainContext.baseDir + File.separatorChar + "..")).getCanonicalPath() + File.separatorChar
         String packageDir = packageLocation.getCanonicalPath()
         String packageName = packageDir - basePath
-        return packageName.trim().replace('/', '.').replace(File.separator, '.')
+        packageName = packageName.trim().replace('/', '.').replace(File.separator, '.')
+        if (mainContext.modeRemoteBuild) {
+            packageName = (mainContext.basePackage + "." + packageName)
+        }
+        return packageName
     }
 }
