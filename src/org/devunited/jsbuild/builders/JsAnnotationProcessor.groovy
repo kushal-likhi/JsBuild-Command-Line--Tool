@@ -31,7 +31,11 @@ class JsAnnotationProcessor implements CommandLineUserInterfaceReady {
         String basePath = new File((mainContext.baseDir + File.separatorChar + "..")).getCanonicalPath() + File.separatorChar
         path = (path - basePath)
         path = (path - ".js")
-        return path.trim().replace('/', '.').replace(File.separator, '.')
+        path = path.trim().replace('/', '.').replace(File.separator, '.')
+        if (mainContext.modeRemoteBuild) {
+            path = (mainContext.basePackage + "." + path)
+        }
+        return path
     }
 
     def decryptAnnotationString = {String str ->

@@ -31,6 +31,8 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
     public boolean modeRemoteBuild = false
 
+    public boolean buildConsole = false
+
     public String basePackage = ""
 
     public Integer filesScanned = 0
@@ -80,6 +82,9 @@ class JsBuild implements CommandLineUserInterfaceReady {
         }
         if (optionAccessor.n) {
             isFileCommentsEnabled = false
+        }
+        if(optionAccessor.c){
+            buildConsole = true
         }
 
 

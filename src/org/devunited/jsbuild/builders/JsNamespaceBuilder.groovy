@@ -58,6 +58,11 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
         String contentBuffer = ""
 
         if (recursionLevel == 1) {
+
+            if (mainContext.buildConsole) {
+                contentBuffer += buildConsole()
+            }
+
             contentBuffer = processComponents(contentBuffer)
 
             contentBuffer = processIncludes(contentBuffer)
@@ -198,5 +203,27 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
         return contentBuffer
     }
 
+    private String buildConsole() {
+        String contentBuffer = ""
+        File source = new File(mainContext.homeDir + File.separatorChar + "console")
+        if (source.exists()) {
+            mainContext.baseDir = source.getCanonicalPath()
+            mainContext.modeRemoteBuild = true
+            contentBuffer += """${indent}${
+                new JsPackageBuilder(
+                        [
+                                recursionLevel: recursionLevel + 1,
+                                recursionSibling: recursionSibling
+                        ],
+                        mainContext
+                ).build(source)
+            }, \n"""
+            mainContext.baseDir = new String(mainContext.baseDirBackup as String)
+            mainContext.modeRemoteBuild = false
+        } else {
+            mainContext.errors.add("ERROR: Unable To Include: Console. Console Files not Found at ${source.getCanonicalPath()}")
+        }
+        contentBuffer
+    }
 
 }

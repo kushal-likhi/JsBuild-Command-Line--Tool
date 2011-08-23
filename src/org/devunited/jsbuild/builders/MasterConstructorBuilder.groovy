@@ -32,6 +32,10 @@ class MasterConstructorBuilder implements CommandLineUserInterfaceReady {
 
         data += "\nwindow.onload = function(){"
 
+        data += ("\n" + getSessionDeclarations())
+
+        data += ("\n" + getLoggerAndWatcher())
+
         mainContext.constructors.each {
             data += "\n${indent}${it}();"
         }
@@ -40,8 +44,8 @@ class MasterConstructorBuilder implements CommandLineUserInterfaceReady {
             data += indentEachLine(annotationEngine.buildEventCode(key, val))
         }
 
-        mainContext.intervalRegistry.each{key,val->
-            data += indentEachLine(annotationEngine.processIntervals(key,val))
+        mainContext.intervalRegistry.each {key, val ->
+            data += indentEachLine(annotationEngine.processIntervals(key, val))
         }
 
         data += "\n}"
@@ -55,5 +59,17 @@ class MasterConstructorBuilder implements CommandLineUserInterfaceReady {
             outBuffer += "\n${indent}${it}"
         }
         outBuffer
+    }
+
+    private String getLoggerAndWatcher() {
+        String base = mainContext.basePackage
+        return """    window.log = function(str){try{${base}.console.log(str,'white')}catch(c){}};
+    window.watch = function(k,v){try{${base}.console.watch(k,v)}catch(c){}};"""
+    }
+
+    private String getSessionDeclarations() {
+        String base = mainContext.basePackage
+        return """    ${base}.session = new Object();
+    window.session = ${base}.session;"""
     }
 }

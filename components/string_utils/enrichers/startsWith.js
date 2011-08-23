@@ -1,3 +1,3 @@
-function(){
-      alert("startsWithCalled");
+function(str) {
+    return this.indexOf(str) === 0;
 }

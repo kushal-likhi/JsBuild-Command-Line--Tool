@@ -48,6 +48,7 @@ public static interface CommandLineUserInterfaceReady {
         cli.b(longOpt: 'home', argName: 'Home Directory', required: false, args: 1, 'Home Directory For The Install')
         cli.e(longOpt: 'echo', required: false, 'Echo the Final Output on the console')
         cli.m(longOpt: 'minify', required: false, 'Also save a minified Js file')
+        cli.c(longOpt: 'console', required: false, 'Also integrate debug console with the code')
         cli.n(longOpt: 'nofilecomments', required: false, 'if You dont want file comments to be echoed in the final build')
         OptionAccessor opt = cli.parse(args)
         if (opt.h) {
