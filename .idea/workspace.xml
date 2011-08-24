@@ -15,51 +15,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b413325-a7a6-49e1-b007-93cb281e4c2c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/Constructor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/a.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/closeEditor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/eventHandlers/consoleshowHide.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/eventHandlers/executeCommand.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/ex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/getFunc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/launchEditor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/log.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/stack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/ui/buildUI.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/ui/getSize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/updateFunc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/console/watch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/contains.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/endsWith.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/getSize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/isBlank.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/isCreditCard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/isDate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/isDateDE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/isDateISO.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/isDigits.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/isEmail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/isNumber.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/isNumberDE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/isURL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/parseDate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/readLines.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/repeate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/replaceAll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/reverse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/toArray.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/toBoolean.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/toFloat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/toInteger.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/string_utils/Constructor.js" afterPath="$PROJECT_DIR$/components/string_utils/Constructor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/string_utils/enrichers/startsWith.js" afterPath="$PROJECT_DIR$/components/string_utils/enrichers/startsWith.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/BuildInfo.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/BuildInfo.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationEngine.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationEngine.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/devunited/jsbuild/enricher/CommandLineUserInterfaceReady.groovy" afterPath="$PROJECT_DIR$/src/org/devunited/jsbuild/enricher/CommandLineUserInterfaceReady.groovy" />
     </list>
     <ignored path="jsbuild.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -126,7 +88,16 @@
       <file leaf-file-name="JsBuild.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="31" selection-start="814" selection-end="826" vertical-scroll-proportion="0.0">
+            <state line="63" column="37" selection-start="1416" selection-end="1416" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsAnnotationEngine.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationEngine.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="119" column="75" selection-start="4250" selection-end="4250" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -135,7 +106,7 @@
       <file leaf-file-name="JsNamespaceBuilder.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="56" selection-start="1829" selection-end="1829" vertical-scroll-proportion="0.0">
+            <state line="188" column="116" selection-start="7525" selection-end="7525" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -144,7 +115,7 @@
       <file leaf-file-name="JsAnnotationProcessor.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="15" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.0">
+            <state line="97" column="30" selection-start="4248" selection-end="4248" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -153,7 +124,7 @@
       <file leaf-file-name="MasterConstructorBuilder.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="46" selection-start="510" selection-end="510" vertical-scroll-proportion="0.5536028">
+            <state line="55" column="0" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.4909091">
               <folding />
             </state>
           </provider>
@@ -173,8 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/components/console/eventHandlers/consoleshowHide.js" />
-        <option value="$PROJECT_DIR$/components/console/ui/getSize.js" />
         <option value="$PROJECT_DIR$/components/console/ui/buildUI.js" />
         <option value="$PROJECT_DIR$/components/console/stack.js" />
         <option value="$PROJECT_DIR$/components/console/ex.js" />
@@ -184,11 +153,13 @@
         <option value="$PROJECT_DIR$/components/console/updateFunc.js" />
         <option value="$PROJECT_DIR$/components/console/closeEditor.js" />
         <option value="$PROJECT_DIR$/components/console/Constructor.js" />
-        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy" />
-        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy" />
-        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy" />
         <option value="$PROJECT_DIR$/components/console/eventHandlers/executeCommand.js" />
         <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/BuildInfo.groovy" />
+        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationEngine.groovy" />
+        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy" />
+        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy" />
+        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy" />
+        <option value="$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy" />
       </list>
     </option>
   </component>
@@ -243,6 +214,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -297,157 +271,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="messages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="enricher" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="component" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="builders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="console" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsbuild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="console" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eventHandlers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -686,8 +515,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="720" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="24" width="1366" height="720" extended-state="1" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -789,114 +618,94 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/components/console/stack.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="28" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/console/ex.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="37" selection-start="10" selection-end="10" vertical-scroll-proportion="0.02636204">
-          <folding />
-        </state>
+        <state line="1" column="37" selection-start="10" selection-end="10" vertical-scroll-proportion="0.02636204" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/console/a.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="2" selection-start="10" selection-end="10" vertical-scroll-proportion="0.02636204">
-          <folding />
-        </state>
+        <state line="1" column="2" selection-start="10" selection-end="10" vertical-scroll-proportion="0.02636204" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/console/closeEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="66" selection-start="107" selection-end="107" vertical-scroll-proportion="0.054545455">
-          <folding />
-        </state>
+        <state line="2" column="66" selection-start="107" selection-end="107" vertical-scroll-proportion="0.054545455" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/console/launchEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="118" selection-start="815" selection-end="815" vertical-scroll-proportion="0.47486034">
-          <folding />
-        </state>
+        <state line="17" column="118" selection-start="815" selection-end="815" vertical-scroll-proportion="0.47486034" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/console/getFunc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="1" selection-start="43" selection-end="43" vertical-scroll-proportion="0.05272408">
-          <folding />
-        </state>
+        <state line="2" column="1" selection-start="43" selection-end="43" vertical-scroll-proportion="0.05272408" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/console/log.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/console/updateFunc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="37" selection-start="109" selection-end="142" vertical-scroll-proportion="0.10909091">
-          <folding />
-        </state>
+        <state line="4" column="37" selection-start="109" selection-end="142" vertical-scroll-proportion="0.10909091" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/console/Constructor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="30" selection-start="221" selection-end="221" vertical-scroll-proportion="0.10544816">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="31" selection-start="814" selection-end="826" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="56" selection-start="1829" selection-end="1829" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="4" column="30" selection-start="221" selection-end="221" vertical-scroll-proportion="0.10544816" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsPackageBuilder.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="28" selection-start="1883" selection-end="2327" vertical-scroll-proportion="0.7206704">
+        <state line="66" column="28" selection-start="1883" selection-end="2327" vertical-scroll-proportion="0.7206704" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/console/eventHandlers/executeCommand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="45" selection-start="229" selection-end="229" vertical-scroll-proportion="0.1396648" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/BuildInfo.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="74" selection-start="280" selection-end="287" vertical-scroll-proportion="0.40509915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationEngine.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="75" selection-start="4250" selection-end="4250" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsAnnotationProcessor.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="15" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.0">
+        <state line="97" column="30" selection-start="4248" selection-end="4248" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/console/eventHandlers/executeCommand.js">
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/JsBuild.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="45" selection-start="229" selection-end="229" vertical-scroll-proportion="0.1396648">
+        <state line="63" column="37" selection-start="1416" selection-end="1416" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/BuildInfo.groovy">
+    <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/JsNamespaceBuilder.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="43" selection-start="488" selection-end="488" vertical-scroll-proportion="0.54545456">
+        <state line="188" column="116" selection-start="7525" selection-end="7525" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/devunited/jsbuild/builders/MasterConstructorBuilder.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="46" selection-start="510" selection-end="510" vertical-scroll-proportion="0.5536028">
+        <state line="55" column="0" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.4909091">
           <folding />
         </state>
       </provider>

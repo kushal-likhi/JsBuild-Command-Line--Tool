@@ -90,6 +90,13 @@ class JsAnnotationProcessor implements CommandLineUserInterfaceReady {
                     mainContext.intervalRegistry.put(annotation.args.first().trim(), [target: propertyAddress, interval: annotation.args.last().trim()])
                 }
                 break;
+            case "injectinto":
+                if (annotation.args.isEmpty()) {
+                    mainContext.errors.add("ERROR: Annotation Inject Into Has no Argument specified, Hence Annotation Ignored")
+                } else {
+                    mainContext.injectProperties.put(annotation.args.first().trim(), propertyAddress)
+                }
+                break;
             default:
                 mainContext.errors.add("WARNING: Annotation '${annotation.type}' Not Recognised, Hence Ignored")
                 break;

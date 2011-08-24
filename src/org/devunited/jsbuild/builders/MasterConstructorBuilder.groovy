@@ -22,6 +22,8 @@ class MasterConstructorBuilder implements CommandLineUserInterfaceReady {
     public String build() {
         String data = ""
 
+        data += "\nwindow.onload = function(){"
+
         JsAnnotationEngine annotationEngine = new JsAnnotationEngine(data)
 
         annotationEngine.processAlias(mainContext.aliasedProperties)
@@ -30,11 +32,13 @@ class MasterConstructorBuilder implements CommandLineUserInterfaceReady {
 
         data = annotationEngine.contents
 
-        data += "\nwindow.onload = function(){"
-
         data += ("\n" + getSessionDeclarations())
 
         data += ("\n" + getLoggerAndWatcher())
+
+        mainContext.injectProperties.each {key, val ->
+            data += indentEachLine(annotationEngine.processInjectProperties(key, val))
+        }
 
         mainContext.constructors.each {
             data += "\n${indent}${it}();"

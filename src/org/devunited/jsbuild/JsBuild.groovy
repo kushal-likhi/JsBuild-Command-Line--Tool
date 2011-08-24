@@ -61,6 +61,8 @@ class JsBuild implements CommandLineUserInterfaceReady {
 
     public Map intervalRegistry = [:]
 
+    public Map injectProperties = [:]
+
     public List errors = []
 
     public List<String> constructors = []

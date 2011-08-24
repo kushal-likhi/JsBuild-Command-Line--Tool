@@ -100,11 +100,24 @@ class JsAnnotationEngine implements CommandLineUserInterfaceReady {
         code
     }
 
+    public String processInjectProperties(String name, String address) {
+        String data = TemplateBuilder.buildTemplate(codeTemplates.inject,
+                [
+                        name: name,
+                        property: address.tokenize('.').last(),
+                        handler: address
+                ]
+        )
+        data
+    }
+
+
     private Map codeTemplates = [
             eventHandlerIdBased: "if(document.getElementById('###id###')){document.getElementById('###id###').###event### = ###handler###}",
             eventHandlerIdBasedTryCatch: "try{document.getElementById('###id###').###event### = ###handler###}catch(c){}",
             eventHandlerImplicit: "###object###.###event### = ###handler###;",
             createInterval: "###name### = setInterval('###target###()',###interval###);",
+            inject: "###name###.prototype.###property### = ###handler###;",
             eventHandlerClassBased: "try{var aht = document.getElementsByTagName(\"*\");for(idx in aht){if(aht[idx].className == \"###className###\"){aht[idx].###event### = ###handler###}}}catch(c){}"
     ]
 

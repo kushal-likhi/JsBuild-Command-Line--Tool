@@ -200,6 +200,7 @@ class JsNamespaceBuilder implements CommandLineUserInterfaceReady {
                 }
             }
         }
+        contentBuffer = contentBuffer.replace("jsbuildRuntimeBasePackage", JsPackageBuilder.determinePackage(namespace, mainContext))
         return contentBuffer
     }
 
